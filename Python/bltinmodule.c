@@ -2705,19 +2705,26 @@ static PyMethodDef builtin_methods[] = {
      METH_FASTCALL | METH_KEYWORDS, build_class_doc},
     {"__import__",      (PyCFunction)(void(*)(void))builtin___import__, METH_VARARGS | METH_KEYWORDS, import_doc},
     BUILTIN_ABS_METHODDEF
+    {"绝对值", (PyCFunction)builtin_abs, METH_O, builtin_abs__doc__},
     BUILTIN_ALL_METHODDEF
+    {"全部", (PyCFunction)builtin_all, METH_O, builtin_all__doc__},
     BUILTIN_ANY_METHODDEF
+    {"任何", (PyCFunction)builtin_any, METH_O, builtin_any__doc__},
     BUILTIN_ASCII_METHODDEF
     BUILTIN_BIN_METHODDEF
+    {"二进制", (PyCFunction)builtin_bin, METH_O, builtin_bin__doc__},
     {"breakpoint",      (PyCFunction)(void(*)(void))builtin_breakpoint, METH_FASTCALL | METH_KEYWORDS, breakpoint_doc},
     BUILTIN_CALLABLE_METHODDEF
     BUILTIN_CHR_METHODDEF
+    {"ascii码", (PyCFunction)builtin_chr, METH_O, builtin_chr__doc__},
     BUILTIN_COMPILE_METHODDEF
     BUILTIN_DELATTR_METHODDEF
     {"dir",             builtin_dir,        METH_VARARGS, dir_doc},
     BUILTIN_DIVMOD_METHODDEF
     BUILTIN_EVAL_METHODDEF
+    {"计算", (PyCFunction)(void(*)(void))builtin_eval, METH_FASTCALL, builtin_eval__doc__},
     BUILTIN_EXEC_METHODDEF
+    {"运行", (PyCFunction)(void(*)(void))builtin_exec, METH_FASTCALL, builtin_exec__doc__},
     BUILTIN_FORMAT_METHODDEF
     {"getattr",         (PyCFunction)(void(*)(void))builtin_getattr, METH_FASTCALL, getattr_doc},
     BUILTIN_GLOBALS_METHODDEF
@@ -2726,10 +2733,13 @@ static PyMethodDef builtin_methods[] = {
     BUILTIN_HEX_METHODDEF
     BUILTIN_ID_METHODDEF
     BUILTIN_INPUT_METHODDEF
+    {"输入", (PyCFunction)(void(*)(void))builtin_input, METH_FASTCALL, builtin_input__doc__},
     BUILTIN_ISINSTANCE_METHODDEF
     BUILTIN_ISSUBCLASS_METHODDEF
     {"iter",            (PyCFunction)(void(*)(void))builtin_iter,       METH_FASTCALL, iter_doc},
+    {"重复",            (PyCFunction)(void(*)(void))builtin_iter,       METH_FASTCALL, iter_doc},
     BUILTIN_LEN_METHODDEF
+    {"长度", (PyCFunction)builtin_len, METH_O, builtin_len__doc__},
     BUILTIN_LOCALS_METHODDEF
     {"max",             (PyCFunction)(void(*)(void))builtin_max,        METH_VARARGS | METH_KEYWORDS, max_doc},
     {"最大",             (PyCFunction)(void(*)(void))builtin_max,        METH_VARARGS | METH_KEYWORDS, max_doc},
@@ -2737,6 +2747,7 @@ static PyMethodDef builtin_methods[] = {
     {"next",            (PyCFunction)(void(*)(void))builtin_next,       METH_FASTCALL, next_doc},
     {"最小",             (PyCFunction)(void(*)(void))builtin_min,        METH_VARARGS | METH_KEYWORDS, min_doc},
     {"下一个",            (PyCFunction)(void(*)(void))builtin_next,       METH_FASTCALL, next_doc},
+    {"下个",            (PyCFunction)(void(*)(void))builtin_next,       METH_FASTCALL, next_doc},
     BUILTIN_OCT_METHODDEF
     BUILTIN_ORD_METHODDEF
     BUILTIN_POW_METHODDEF
@@ -2809,31 +2820,51 @@ _PyBuiltin_Init(PyThreadState *tstate)
     SETBUILTIN("False",                 Py_False);
     SETBUILTIN("True",                  Py_True);
     SETBUILTIN("bool",                  &PyBool_Type);
+    SETBUILTIN("空",                  Py_None);
+    SETBUILTIN("省略",              Py_Ellipsis);
+    SETBUILTIN("假",                 Py_False);
+    SETBUILTIN("真",                  Py_True);
+    SETBUILTIN("nothing",                   &_PyNone_Type);
+    SETBUILTIN("布尔值",                  &PyBool_Type);
     SETBUILTIN("memoryview",        &PyMemoryView_Type);
     SETBUILTIN("bytearray",             &PyByteArray_Type);
+    SETBUILTIN("字节数组",             &PyByteArray_Type);
     SETBUILTIN("bytes",                 &PyBytes_Type);
+    SETBUILTIN("字节",                 &PyBytes_Type);
     SETBUILTIN("classmethod",           &PyClassMethod_Type);
     SETBUILTIN("complex",               &PyComplex_Type);
     SETBUILTIN("dict",                  &PyDict_Type);
+    SETBUILTIN("字典",                  &PyDict_Type);
     SETBUILTIN("enumerate",             &PyEnum_Type);
     SETBUILTIN("filter",                &PyFilter_Type);
     SETBUILTIN("float",                 &PyFloat_Type);
+    SETBUILTIN("小数",                 &PyFloat_Type);
     SETBUILTIN("frozenset",             &PyFrozenSet_Type);
     SETBUILTIN("property",              &PyProperty_Type);
     SETBUILTIN("int",                   &PyLong_Type);
+    SETBUILTIN("数字",                   &PyLong_Type);
     SETBUILTIN("list",                  &PyList_Type);
+    SETBUILTIN("列表",                  &PyList_Type);
     SETBUILTIN("map",                   &PyMap_Type);
+    SETBUILTIN("地图",                   &PyMap_Type);
     SETBUILTIN("object",                &PyBaseObject_Type);
+    SETBUILTIN("对象",                &PyBaseObject_Type);
     SETBUILTIN("range",                 &PyRange_Type);
+    SETBUILTIN("范围",                   &PyRange_Type);
     SETBUILTIN("reversed",              &PyReversed_Type);
     SETBUILTIN("set",                   &PySet_Type);
     SETBUILTIN("slice",                 &PySlice_Type);
     SETBUILTIN("staticmethod",          &PyStaticMethod_Type);
     SETBUILTIN("str",                   &PyUnicode_Type);
+    SETBUILTIN("字符串",                 &PyUnicode_Type);
     SETBUILTIN("super",                 &PySuper_Type);
+    SETBUILTIN("超级",                   &PySuper_Type);
     SETBUILTIN("tuple",                 &PyTuple_Type);
+    SETBUILTIN("元组",                 &PyTuple_Type);
     SETBUILTIN("type",                  &PyType_Type);
+    SETBUILTIN("型类",                   &PyType_Type);
     SETBUILTIN("zip",                   &PyZip_Type);
+    SETBUILTIN("打包",                   &PyZip_Type);
     debug = PyBool_FromLong(config->optimization_level == 0);
     if (PyDict_SetItemString(dict, "__debug__", debug) < 0) {
         Py_DECREF(debug);

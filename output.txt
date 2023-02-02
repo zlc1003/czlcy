@@ -1,0 +1,200 @@
+# test len
+# 长度
+try:
+    if <test here>:
+        print("len: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("len: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("len: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test type
+# 型类
+try:
+    if <test here>:
+        print("type: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("type: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("type: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test super
+# 超级
+try:
+    if <test here>:
+        print("super: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("super: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("super: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test str
+# 字符串
+try:
+    if <test here>:
+        print("str: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("str: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("str: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test range
+# 范围
+try:
+    if <test here>:
+        print("range: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("range: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("range: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test object
+# 对象
+try:
+    if <test here>:
+        print("object: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("object: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("object: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test map
+# 地图
+try:
+    if <test here>:
+        print("map: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("map: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("map: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test list
+# 列表
+try:
+    if <test here>:
+        print("list: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("list: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("list: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test int
+# 数字
+try:
+    if <test here>:
+        print("int: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("int: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("int: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test float
+# 小数
+try:
+    if <test here>:
+        print("float: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("float: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("float: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test dict
+# 字典
+try:
+    if <test here>:
+        print("dict: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("dict: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("dict: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test bytes
+# 字节
+try:
+    if <test here>:
+        print("bytes: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("bytes: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("bytes: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test bool
+# abc
+try:
+    if <test here>:
+        print("bool: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("bool: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("bool: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test True
+# 真
+try:
+    if <test here>:
+        print("True: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("True: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("True: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test False
+# 假
+try:
+    if <test here>:
+        print("False: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("False: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("False: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test Ellipsis
+# 省略
+try:
+    if <test here>:
+        print("Ellipsis: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("Ellipsis: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("Ellipsis: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test None
+# 空
+try:
+    if <test here>:
+        print("None: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("None: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("None: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test tuple
+# 元组
+try:
+    if <test here>:
+        print("tuple: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("tuple: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("tuple: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test zip
+# 打包
+try:
+    if <test here>:
+        print("zip: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("zip: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("zip: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+
+# test bytearray
+# 字节数组
+try:
+    if <test here>:
+        print("bytearray: "+bcolors.BOLD+bcolors.OKGREEN+"PASS"+bcolors.ENDC)
+    else:
+        print("bytearray: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+except:
+    print("bytearray: "+bcolors.BOLD+bcolors.FAIL+"FAIL"+bcolors.ENDC)
+

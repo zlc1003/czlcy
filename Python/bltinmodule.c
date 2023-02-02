@@ -1691,13 +1691,12 @@ builtin_min(PyObject *self, PyObject *args, PyObject *kwds)
 }
 
 PyDoc_STRVAR(min_doc,
-"min(iterable, *[, default=obj, key=func]) -> value\n\
-min(arg1, arg2, *args, *[, key=func]) -> value\n\
+"最小(iterable, *[, default=obj, key=func]) -> value\n\
+最小(arg1, arg2, *args, *[, key=func]) -> value\n\
 \n\
-With a single iterable argument, return its smallest item. The\n\
-default keyword-only argument specifies an object to return if\n\
-the provided iterable is empty.\n\
-With two or more arguments, return the smallest argument.");
+使用单个可迭代参数，返回它的最小项。 \n\
+如果提供的可迭代对象为空，则默认的仅关键字参数指定要返回的对象。\n\
+ 对于两个或多个参数，返回最小的参数。");
 
 
 /* AC: cannot convert yet, waiting for *args support */
@@ -1708,13 +1707,12 @@ builtin_max(PyObject *self, PyObject *args, PyObject *kwds)
 }
 
 PyDoc_STRVAR(max_doc,
-"max(iterable, *[, default=obj, key=func]) -> value\n\
-max(arg1, arg2, *args, *[, key=func]) -> value\n\
+"最大(iterable, *[, default=obj, key=func]) -> value\n\
+最大(arg1, arg2, *args, *[, key=func]) -> value\n\
 \n\
-With a single iterable argument, return its biggest item. The\n\
-default keyword-only argument specifies an object to return if\n\
-the provided iterable is empty.\n\
-With two or more arguments, return the largest argument.");
+使用单个可迭代参数，返回其最大的项目。 \n\
+如果提供的可迭代对象为空，则默认的仅关键字参数指定要返回的对象。 \n\
+对于两个或多个参数，返回最大的参数。");
 
 
 /*[clinic input]
@@ -1727,7 +1725,8 @@ Return the octal representation of an integer.
 
    >>> oct(342391)
    '0o1234567'
-[clinic start generated code]*/
+[clinic start generated code]
+*/
 
 static PyObject *
 builtin_oct(PyObject *module, PyObject *number)
@@ -1894,14 +1893,14 @@ builtin_print(PyObject *self, PyObject *const *args, Py_ssize_t nargs, PyObject 
 }
 
 PyDoc_STRVAR(print_doc,
-"print(value, ..., sep=' ', end='\\n', file=sys.stdout, flush=False)\n\
+"输出(value, ..., sep=' ', end='\\n', file=sys.stdout, flush=False)\n\
 \n\
-Prints the values to a stream, or to sys.stdout by default.\n\
-Optional keyword arguments:\n\
-file:  a file-like object (stream); defaults to the current sys.stdout.\n\
-sep:   string inserted between values, default a space.\n\
-end:   string appended after the last value, default a newline.\n\
-flush: whether to forcibly flush the stream.");
+将值打印到流中，或者默认打印到 sys.stdout。\n\
+可选关键字参数：\n\
+文件：类文件对象（流）； 默认为当前 sys.stdout。\n\
+sep: 插入值之间的字符串，默认一个空格。\n\
+end: 附加在最后一个值之后的字符串，默认为换行符。\n\
+flush：是否强制刷新流。");
 
 
 /*[clinic input]
@@ -1933,17 +1932,17 @@ builtin_input_impl(PyObject *module, PyObject *prompt)
     /* Check that stdin/out/err are intact */
     if (fin == NULL || fin == Py_None) {
         PyErr_SetString(PyExc_RuntimeError,
-                        "input(): lost sys.stdin");
+                        "输入(): lost sys.stdin");
         return NULL;
     }
     if (fout == NULL || fout == Py_None) {
         PyErr_SetString(PyExc_RuntimeError,
-                        "input(): lost sys.stdout");
+                        "输入(): lost sys.stdout");
         return NULL;
     }
     if (ferr == NULL || ferr == Py_None) {
         PyErr_SetString(PyExc_RuntimeError,
-                        "input(): lost sys.stderr");
+                        "输入(): lost sys.stderr");
         return NULL;
     }
 
@@ -2645,15 +2644,15 @@ static PyMethodDef zip_methods[] = {
 };
 
 PyDoc_STRVAR(zip_doc,
-"zip(*iterables) --> A zip object yielding tuples until an input is exhausted.\n\
+"打包(*iterable) --> 一个 zip 对象产生元组直到输入耗尽。\n\
 \n\
-   >>> list(zip('abcdefg', range(3), range(4)))\n\
+   >>> 列表(打包('abcdefg', 范围(3), 范围(4)))\n\
    [('a', 0, 0), ('b', 1, 1), ('c', 2, 2)]\n\
 \n\
-The zip object yields n-length tuples, where n is the number of iterables\n\
-passed as positional arguments to zip().  The i-th element in every tuple\n\
-comes from the i-th iterable argument to zip().  This continues until the\n\
-shortest argument is exhausted.");
+zip 对象产生 n 长度的元组，其中 n 是作为位置参数传递给\n\
+打包() 的可迭代对象的数量。 每个元组中的第 i 个元素来自 打包()\n\
+的第 i 个可迭代参数。 这一直持续到最短的参数用尽。");
+
 
 PyTypeObject PyZip_Type = {
     PyVarObject_HEAD_INIT(&PyType_Type, 0)

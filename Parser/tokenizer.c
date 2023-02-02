@@ -156,7 +156,7 @@ get_coding_spec(const char *s, char **spec, Py_ssize_t size, struct tok_state *t
     /* Coding spec must be in a comment, and that comment must be
      * the only statement on the source code line. */
     for (i = 0; i < size - 6; i++) {
-        if (s[i] == '#')
+        if ((s[i] == '#') || (s[i] == '/'))
             break;
         if (s[i] != ' ' && s[i] != '\t' && s[i] != '\014')
             return 1;
@@ -219,7 +219,7 @@ check_coding_spec(const char* line, Py_ssize_t size, struct tok_state *tok,
     if (!cs) {
         Py_ssize_t i;
         for (i = 0; i < size; i++) {
-            if (line[i] == '#' || line[i] == '\n' || line[i] == '\r')
+            if (line[i] == '#' || line[i] == '/' || line[i] == '\n' || line[i] == '\r')
                 break;
             if (line[i] != ' ' && line[i] != '\t' && line[i] != '\014') {
                 /* Stop checking coding spec after a line containing
@@ -1203,7 +1203,7 @@ tok_get(struct tok_state *tok, const char **p_start, const char **p_end)
             }
         }
         tok_backup(tok, c);
-        if (c == '#' || c == '\n' || c == '\\') {
+        if (c == '#' || c == '/' || c == '\n' || c == '\\') {
             /* Lines with only whitespace and/or comments
                and/or a line continuation character
                shouldn't affect the indentation and are
@@ -1315,7 +1315,7 @@ tok_get(struct tok_state *tok, const char **p_start, const char **p_end)
     tok->start = tok->cur - 1;
 
     /* Skip comment, unless it's a type comment */
-    if (c == '#') {
+    if (c == '#' || c == '/') {
         const char *prefix, *p, *type_start;
 
         while (c != EOF && c != '\n') {

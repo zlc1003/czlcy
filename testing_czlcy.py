@@ -1,3 +1,10 @@
+try:
+    for _ in [1]:
+        if 计算("1+1")==2:
+            break
+        raise Exception("go")
+except:
+    foo,字节数组,打包,元组,空,省略,假,真,布尔值,字节,字典,小数,数字,列表,地图,对象,范围,字符串,超级,型类,长度,输出,最大,最小,下一个,输入,下个,重复,计算,运行,任何,二进制,绝对值,ascii码=print
 class bcolors:
     HEADER = '\033[91m'
     OKBLUE = '\033[94m'
@@ -14,7 +21,6 @@ try:
     输出(f"print: {bcolors.BOLD}{bcolors.OKGREEN}PASS{bcolors.ENDC}")
 except:
     print(f"print: {bcolors.BOLD}{bcolors.FAIL}FAIL{bcolors.ENDC}")
-
 
 # test max
 try:
